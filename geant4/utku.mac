@@ -1,0 +1,116 @@
+# ==============================================================================
+# GEOMETRİ VE MATERYAL AYARLARI (Önce Parafin -> Sonra Tungsten)
+# ==============================================================================
+
+# İlk Tabaka (Parçacıkların ilk çarpacağı zırh): 1 cm Parafin (GÜNCELLENDİ)
+/testem/det/setAbsThick 1 cm
+/testem/det/setAbsMat Paraffin
+
+# İkinci Tabaka (Arkada kalan zırh): 4 cm Tungsten Alaşımı (GÜNCELLENDİ)
+/testem/det/setAbs2Thick 4 cm
+/testem/det/setAbs2Mat WNICU97
+
+# YZ düzlemindeki genişlik
+/testem/det/setAbsYZ 10 cm
+
+# Geometri değişikliklerinin sisteme kaydolması ve her iki absorber katmanının 
+# aktifleşmesi için run başlangıcını tetikliyoruz.
+/run/initialize
+
+# PARÇACIK TABANCASI AYARLARI
+# ------------------------------------------------------------------------------
+# Parafin katmanı X = -1 cm ile X = 0 cm arasındadır.
+# Parçacıkların önce Parafin yüzeyine (X = -1 cm) girmesi için tabanca -1.001 cm'ye çekildi.
+/gun/position -1.001 0.0 0.0 cm
+/gun/direction 1 0 0
+
+
+# GAMA
+#################################################
+
+# Am-241 (59.5 keV)
+/gun/particle gamma
+/gun/energy 59.5 keV
+/run/beamOn 1000000
+
+# I-131 (364 keV)
+/gun/particle gamma
+/gun/energy 364 keV
+/run/beamOn 1000000
+
+# Cs-134 (605 keV)
+/gun/particle gamma
+/gun/energy 605 keV
+/run/beamOn 1000000
+
+# Cs-137 (662 keV)
+/gun/particle gamma
+/gun/energy 662 keV
+/run/beamOn 1000000
+
+# Cs-134 (796 keV)
+/gun/particle gamma
+/gun/energy 796 keV
+/run/beamOn 1000000
+
+# La-140 (1596 keV)
+/gun/particle gamma
+/gun/energy 1596 keV
+/run/beamOn 1000000
+
+
+# BETA
+#################################################
+
+# I-131
+/gun/particle e-
+/gun/energy 606 keV
+/run/beamOn 1000000
+
+# Cs-137
+/gun/particle e-
+/gun/energy 512 keV
+/run/beamOn 1000000
+
+# Sr-90
+/gun/particle e-
+/gun/energy 546 keV
+/run/beamOn 1000000
+
+# Y-90
+/gun/particle e-
+/gun/energy 2.28 MeV
+/run/beamOn 1000000
+
+
+# ALFA 
+#################################################
+
+# Pu-239
+/gun/particle alpha
+/gun/energy 5.16 MeV
+/run/beamOn 1000000
+
+# Am-241
+/gun/particle alpha
+/gun/energy 5.49 MeV
+/run/beamOn 1000000
+
+
+# NÖTRON 
+#################################################
+
+# Termal nötron (Reaktör fiziği ortamı)
+/gun/particle neutron
+/gun/energy 0.025 eV
+/run/beamOn 1000000
+
+# Epitermal nötron
+/gun/particle neutron
+/gun/energy 100 keV
+/run/beamOn 1000000
+
+# Hızlı nötron (Fizyon nötronu seviyesi)
+/gun/particle neutron
+/gun/energy 2 MeV
+/run/beamOn 1000000

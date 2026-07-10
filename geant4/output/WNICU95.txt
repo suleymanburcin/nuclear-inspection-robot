@@ -1,0 +1,1734 @@
+
+**************************************************************
+ Geant4 version Name: geant4-11-03-patch-02 [MT]   (25-April-2025)
+  << in Multi-threaded mode >> 
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+G4PhysListFactory::GetReferencePhysList <QGSP_BERT_HP>  EMoption= 0
+<<< Geant4 Physics List simulation engine: QGSP_BERT_HP
+
+
+
+---------------------------------------------------------
+ The WORLD   is made of 12 cm  of G4_Galactic
+ ABSORBER 1  is made of 1 cm  of Paraffin
+ ABSORBER 2  is made of 4 cm  of WNICU95
+---------------------------------------------------------
+
+
+ hInelastic QGSP_BERT_HP  Thresholds: 
+    1) between BERT  and FTF/P over the interval 3 to 6 GeV. 
+    2) between FTF/P and QGS/P over the interval 12 to 25 GeV. 
+  -- quasiElastic: 1 for QGS  and 0 for FTF
+=======================================================================
+======                 Electromagnetic Physics Parameters      ========
+=======================================================================
+LPM effect enabled                                 1
+Enable creation and use of sampling tables         0
+Apply cuts on all EM processes                     0
+Use combined TransportationWithMsc                 Disabled
+Use general process                                1
+Enable linear polarisation for gamma               0
+Enable photoeffect sampling below K-shell          1
+Enable sampling of quantum entanglement            0
+X-section factor for integral approach             0.8
+Min kinetic energy for tables                      100 eV 
+Max kinetic energy for tables                      100 TeV
+Number of bins per decade of a table               7
+Verbose level                                      1
+Verbose level for worker thread                    0
+Bremsstrahlung energy threshold above which 
+  primary e+- is added to the list of secondary    100 TeV
+Bremsstrahlung energy threshold above which primary
+  muon/hadron is added to the list of secondary    100 TeV
+Positron annihilation at rest model                SimplePositronium
+Enable 3 gamma annihilation on fly                 0
+Lowest triplet kinetic energy                      1 MeV
+Enable sampling of gamma linear polarisation       0
+5D gamma conversion model type                     0
+5D gamma conversion model on isolated ion          0
+Use Ricardo-Gerardo pair production model          0
+Livermore data directory                           epics_2017
+=======================================================================
+======                 Ionisation Parameters                   ========
+=======================================================================
+Step function for e+-                              (0.2, 1 mm)
+Step function for muons/hadrons                    (0.2, 0.1 mm)
+Step function for light ions                       (0.2, 0.1 mm)
+Step function for general ions                     (0.2, 0.1 mm)
+Lowest e+e- kinetic energy                         1 keV
+Lowest muon/hadron kinetic energy                  1 keV
+Use ICRU90 data                                    0
+Fluctuations of dE/dx are enabled                  1
+Type of fluctuation model for leptons and hadrons  Urban
+Use built-in Birks satuaration                     0
+Build CSDA range enabled                           0
+Use cut as a final range enabled                   0
+Enable angular generator interface                 0
+Max kinetic energy for CSDA tables                 1 GeV
+Max kinetic energy for NIEL computation            0 eV 
+Linear loss limit                                  0.01
+Read data from file for e+e- pair production by mu 0
+=======================================================================
+======                 Multiple Scattering Parameters          ========
+=======================================================================
+Type of msc step limit algorithm for e+-           1
+Type of msc step limit algorithm for muons/hadrons 0
+Msc lateral displacement for e+- enabled           1
+Msc lateral displacement for muons and hadrons     0
+Urban msc model lateral displacement alg96         1
+Range factor for msc step limit for e+-            0.04
+Range factor for msc step limit for muons/hadrons  0.2
+Geometry factor for msc step limitation of e+-     2.5
+Safety factor for msc step limit for e+-           0.6
+Skin parameter for msc step limitation of e+-      1
+Lambda limit for msc step limit for e+-            1 mm
+Use Mott correction for e- scattering              0
+Factor used for dynamic computation of angular 
+  limit between single and multiple scattering     1
+Fixed angular limit between single 
+  and multiple scattering                          3.1416 rad
+Upper energy limit for e+- multiple scattering     100 MeV
+Type of electron single scattering model           0
+Type of nuclear form-factor                        1
+Screening factor                                   1
+=======================================================================
+======                 Atomic Deexcitation Parameters          ========
+=======================================================================
+Fluorescence enabled                               1
+Directory in G4LEDATA for fluorescence data files  fluor
+Auger electron cascade enabled                     1
+PIXE atomic de-excitation enabled                  0
+De-excitation module ignores cuts                  1
+Type of PIXE cross section for hadrons             Empirical
+Type of PIXE cross section for e+-                 Livermore
+=======================================================================
+
+### ===  Deexcitation model UAtomDeexcitation is activated for 1 region:
+          DefaultRegionForTheWorld  1  1  0
+### ===  Auger flag: 1
+### ===  Ignore cuts flag:   1
+
+phot:  for gamma SubType=12 BuildTable=0
+      LambdaPrime table from 200 keV to 100 TeV in 61 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+ LivermorePhElectric : Emin=    0 eV  Emax=  100 TeV  SauterGavrila Fluo
+
+compt:  for gamma SubType=13 BuildTable=1
+      Lambda table from 100 eV  to 1 MeV, 7 bins/decade, spline: 1
+      LambdaPrime table from 1 MeV to 100 TeV in 56 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+       Klein-Nishina : Emin=    0 eV  Emax=  100 TeV
+
+conv:  for gamma SubType=14 BuildTable=1
+      Lambda table from 1.022 MeV to 100 TeV, 18 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+     BetheHeitlerLPM : Emin=    0 eV  Emax=  100 TeV  ModifiedTsai
+
+Rayl:  for gamma SubType=11 BuildTable=1
+      Lambda table from 100 eV  to 150 keV, 7 bins/decade, spline: 0
+      LambdaPrime table from 150 keV to 100 TeV in 62 bins 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+   LivermoreRayleigh : Emin=    0 eV  Emax=  100 TeV  CullenGenerator
+
+msc:  for e-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 MeV Nbins=42 100 eV  - 100 MeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+        WentzelVIUni : Emin=  100 MeV Emax=  100 TeV Nbins=42 100 MeV - 100 TeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+
+eIoni:  for e-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha : Emin=    0 eV  Emax=  100 TeV
+
+eBrem:  for e-  XStype:4  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=    1 GeV  ModifiedTsai
+            eBremLPM : Emin=    1 GeV Emax=  100 TeV  ModifiedTsai
+
+CoulombScat:  for e- XStype:1 SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  100 TeV
+
+msc:  for e+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 MeV Nbins=42 100 eV  - 100 MeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+        WentzelVIUni : Emin=  100 MeV Emax=  100 TeV Nbins=42 100 MeV - 100 TeV
+          StepLim=UseSafety Rfact=0.04 Gfact=2.5 Sfact=0.6 DispFlag:1 Skin=1 Llim=1 mm
+
+eIoni:  for e+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        MollerBhabha : Emin=    0 eV  Emax=  100 TeV
+
+eBrem:  for e+  XStype:4  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      LPM flag: 1 for E > 1 GeV,  VertexHighEnergyTh(GeV)= 100000
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+             eBremSB : Emin=    0 eV  Emax=    1 GeV  ModifiedTsai
+            eBremLPM : Emin=    1 GeV Emax=  100 TeV  ModifiedTsai
+
+annihil:  for e+ XStype:2 SubType=5 AtRestModel:Simple BuildTable=0
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            eplus2gg : Emin=    0 eV  Emax=  100 TeV
+
+CoulombScat:  for e+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from 100 MeV to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=  100 MeV Emax=  100 TeV
+
+msc:  for proton  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for proton  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+hBrems:  for proton  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for proton  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 17x1001; from 7.50618 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for proton XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for GenericIon  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+ionIoni:  for GenericIon  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+======================================================================
+======          Radioactive Decay Physics Parameters           =======
+======================================================================
+min MeanLife (from G4NuclideTable)                1 ns 
+Max life time (from G4DeexPrecoParameters)        1000 ps 
+Internal e- conversion flag                       1
+Stored internal conversion coefficients           1
+Enabled atomic relaxation mode                    1
+Enable correlated gamma emission                  0
+Max 2J for sampling of angular correlations       10
+Atomic de-excitation enabled                      1
+Auger electron emission enabled                   1
+Check EM cuts disabled for atomic de-excitation   1
+Use Bearden atomic level energies                 0
+Use ANSTO fluorescence model                      0
+Threshold for very long decay time at rest        1 y  
+======================================================================
+
+msc:  for alpha  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            UrbanMsc : Emin=    0 eV  Emax=  100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+ionIoni:  for alpha  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.02
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            BraggIon : Emin=    0 eV  Emax=7.9452 MeV
+          BetheBloch : Emin=7.9452 MeV Emax=  100 TeV
+
+msc:  for anti_proton  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for anti_proton  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=    2 MeV
+          BetheBloch : Emin=    2 MeV Emax=  100 TeV
+
+hBrems:  for anti_proton  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for anti_proton  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 17x1001; from 7.50618 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for anti_proton XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for kaon+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for kaon+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=1.05231 MeV
+          BetheBloch : Emin=1.05231 MeV Emax=  100 TeV
+
+hBrems:  for kaon+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for kaon+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 18x1001; from 3.94942 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for kaon+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for kaon-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for kaon-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=1.05231 MeV
+          BetheBloch : Emin=1.05231 MeV Emax=  100 TeV
+
+hBrems:  for kaon-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for kaon-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 18x1001; from 3.94942 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for kaon- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of kaon+
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for mu+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+muIoni:  for mu+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=  200 keV
+        MuBetheBloch : Emin=  200 keV Emax=  100 TeV
+
+muBrems:  for mu+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+muPairProd:  for mu+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 21x1001; from 0.85 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for mu+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for mu-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+muIoni:  for mu-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=  200 keV
+        MuBetheBloch : Emin=  200 keV Emax=  100 TeV
+
+muBrems:  for mu-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+              MuBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+muPairProd:  for mu-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 21x1001; from 0.85 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+          muPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for mu- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of mu+
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+NeutronHP: /Elastic file for Z = 18, A = 36 is not found and NeutronHP will use /home/autku/geant4-install/share/Geant4/data/G4NDL4.7.1/Elastic/CrossSection/18_37_Argon
+NeutronHP: /Elastic file for Z = 18, A = 38 is not found and NeutronHP will use /home/autku/geant4-install/share/Geant4/data/G4NDL4.7.1/Elastic/CrossSection/18_39_Argon
+NeutronHP: /Elastic file for Z = 73, A = 180 is not found and NeutronHP will use /home/autku/geant4-install/share/Geant4/data/G4NDL4.7.1/Elastic/CrossSection/73_181_Tantalum
+
+=======================================================
+======       ParticleHP Physics Parameters     ========
+=======================================================
+ Use only photo-evaporation      0
+ Skip missing isotopes           0
+ Neglect Doppler                 0
+ Do not adjust final state       0
+ Produce fission fragments       0
+ Use WendtFissionModel           0
+ Use NRESP71Model                0
+ Use DBRC                        0
+ PHP use Poisson                 0
+ PHP check                       1
+ CHECK HP NAMES                  0
+ Enable DEBUG                    0
+ Use probability tables from     
+=======================================================
+
+
+msc:  for pi+  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for pi+  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               Bragg : Emin=    0 eV  Emax=297.505 keV
+          BetheBloch : Emin=297.505 keV Emax=  100 TeV
+
+hBrems:  for pi+  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for pi+  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 20x1001; from 1.11656 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for pi+ XStype:1 SubType=1 BuildTable=1
+      Lambda table from threshold  to 100 TeV, 7 bins/decade, spline: 0
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+msc:  for pi-  SubType= 10
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+        WentzelVIUni : Emin=    0 eV  Emax=  100 TeV Nbins=84 100 eV  - 100 TeV
+          StepLim=Minimal Rfact=0.2 Gfact=2.5 Sfact=0.6 DispFlag:0 Skin=1 Llim=1 mm
+
+hIoni:  for pi-  XStype:3  SubType=2
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      StepFunction=(0.2, 0.1 mm), integ: 3, fluct: 1, linLossLim= 0.01
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+            ICRU73QO : Emin=    0 eV  Emax=297.505 keV
+          BetheBloch : Emin=297.505 keV Emax=  100 TeV
+
+hBrems:  for pi-  XStype:1  SubType=3
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+               hBrem : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+hPairProd:  for pi-  XStype:1  SubType=4
+      dE/dx and range tables from 100 eV  to 100 TeV in 84 bins
+      Lambda tables from threshold to 100 TeV, 7 bins/decade, spline: 1
+      Sampling table 20x1001; from 1.11656 GeV to 100 TeV 
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+           hPairProd : Emin=    0 eV  Emax=  100 TeV  ModifiedMephi
+
+CoulombScat:  for pi- XStype:1 SubType=1 BuildTable=1
+      Used Lambda table of pi+
+      ThetaMin(p) < Theta(degree) < 180, pLimit(GeV^1)= 0.139531
+      ===== EM models for the G4Region  DefaultRegionForTheWorld ======
+  eCoulombScattering : Emin=    0 eV  Emax=  100 TeV
+
+====================================================================
+                  HADRONIC PROCESSES SUMMARY (verbose level 1)
+-----------------------------------------------------------------------
+                           Hadronic Processes for B-
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: B-Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 0 eV  ---> 25 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for D-
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: D-Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 0 eV  ---> 25 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for GenericIon
+  Process: ionInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: ionElastic
+        Model:          NNDiffuseElastic: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: RadioactiveDecay
+-----------------------------------------------------------------------
+                           Hadronic Processes for He3
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: He3Inelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for alpha
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: alphaInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_He3
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_He3Inelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_alpha
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_alphaInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_deuteron
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_deuteronInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-------------------------------------------------------------------------
+                           Hadronic Processes for anti_hypertriton
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_lambda
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: anti_lambdaInelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 0 eV  ---> 25 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_neutron
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
+        Model:              AntiAElastic: 100 MeV ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_neutronInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_proton
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100.1 MeV
+        Model:              AntiAElastic: 100 MeV ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_protonInelastic
+        Model:                      FTFP: 0 eV  ---> 100 TeV
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for anti_triton
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100.1 MeV/n
+        Model:              AntiAElastic: 100 MeV/n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: anti_tritonInelastic
+        Model:                      FTFP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:              AntiAGlauber: 0 eV  ---> 25.6 PeV
+  Process: hFritiofCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for deuteron
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: dInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for e+
+  Process: positronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for e-
+  Process: electronNuclear
+        Model:   G4ElectroVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:          ElectroNuclearXS: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for gamma
+  Process: photonNuclear
+        Model:               GammaNPreco: 0 eV  ---> 200 MeV
+        Model:            BertiniCascade: 199 MeV ---> 6 GeV
+        Model:           TheoFSGenerator: 3 GeV ---> 100 TeV
+     Cr_sctns:            GammaNuclearXS: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for kaon+
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: kaon+Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 3 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for kaon-
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: kaon-Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 3 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: hBertiniCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for lambda
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: lambdaInelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 3 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for mu+
+  Process: muonNuclear
+        Model:      G4MuonVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:     KokoulinMuonNuclearXS: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for mu-
+  Process: muonNuclear
+        Model:      G4MuonVDNuclearModel: 0 eV  ---> 1 PeV
+     Cr_sctns:     KokoulinMuonNuclearXS: 0 eV  ---> 100 TeV
+  Process: muMinusCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for neutron
+  Process: hadElastic
+        Model:             hElasticCHIPS: 19.5 MeV ---> 100 TeV
+        Model:          NeutronHPElastic: 0 eV  ---> 20 MeV
+     Cr_sctns:          neutronElasticHP: 0 eV  ---> 20 MeV
+     Cr_sctns:        G4NeutronElasticXS: 0 eV  ---> 100 TeV
+  Process: neutronInelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 3 GeV ---> 25 GeV
+        Model:            BertiniCascade: 19.9 MeV ---> 6 GeV
+        Model:        NeutronHPInelastic: 0 eV  ---> 20 MeV
+     Cr_sctns:        neutronInelasticHP: 0 eV  ---> 20 MeV
+     Cr_sctns:      G4NeutronInelasticXS: 0 eV  ---> 100 TeV
+  Process: nCaptureHP
+        Model:             nRadCaptureHP: 0 eV  ---> 100 TeV
+     Cr_sctns:          neutronCaptureHP: 0 eV  ---> 100 TeV
+     Cr_sctns:        G4NeutronCaptureXS: 0 eV  ---> 100 TeV
+  Process: nFissionHP
+        Model:                nFissionVI: 0 eV  ---> 100 TeV
+     Cr_sctns:          neutronFissionHP: 0 eV  ---> 100 TeV
+     Cr_sctns:                    ZeroXS: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for pi+
+  Process: hadElastic
+        Model:           hElasticGlauber: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+  Process: pi+Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 3 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for pi-
+  Process: hadElastic
+        Model:           hElasticGlauber: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+  Process: pi-Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 3 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+  Process: hBertiniCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for proton
+  Process: hadElastic
+        Model:             hElasticCHIPS: 0 eV  ---> 100 TeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+  Process: protonInelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 3 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:  BarashenkovGlauberGribov: 0 eV  ---> 100 TeV
+-----------------------------------------------------------------------
+                           Hadronic Processes for sigma-
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV  ---> 100 TeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: sigma-Inelastic
+        Model:                      QGSP: 12 GeV ---> 100 TeV
+        Model:                      FTFP: 3 GeV ---> 25 GeV
+        Model:            BertiniCascade: 0 eV  ---> 6 GeV
+     Cr_sctns:            Glauber-Gribov: 0 eV  ---> 100 TeV
+  Process: hBertiniCaptureAtRest
+-----------------------------------------------------------------------
+                           Hadronic Processes for triton
+  Process: hadElastic
+        Model:              hElasticLHEP: 0 eV /n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: tInelastic
+        Model:  Binary Light Ion Cascade: 0 eV /n ---> 6 GeV/n
+        Model:                      FTFP: 3 GeV/n ---> 100 TeV/n
+     Cr_sctns:  Glauber-Gribov Nucl-nucl: 0 eV  ---> 25.6 PeV
+  Process: RadioactiveDecay
+=======================================================================
+======       Geant4 Native Pre-compound Model Parameters       ========
+=======================================================================
+Type of pre-compound inverse x-section              1
+Pre-compound model active                           1
+Pre-compound excitation low energy                  100 keV
+Pre-compound excitation high energy                 30 MeV
+Angular generator for pre-compound model            1
+Use NeverGoBack option for pre-compound model       0
+Use SoftCutOff option for pre-compound model        0
+Use CEM transitions for pre-compound model          1
+Use GNASH transitions for pre-compound model        0
+Use HETC submodel for pre-compound model            0
+=======================================================================
+======       Nuclear De-excitation Module Parameters           ========
+=======================================================================
+Type of de-excitation inverse x-section             3
+Type of de-excitation factory                       Evaporation+GEM
+Number of de-excitation channels                    68
+Min excitation energy                               10 eV 
+Min energy per nucleon for multifragmentation       200 GeV
+Limit excitation energy for Fermi BreakUp           20 MeV
+Level density (1/MeV)                               0.075
+Use simple level density model                      1
+Use discrete excitation energy of the residual      0
+Time limit for long lived isomeres                  1000 ps 
+Isomer production flag                              1
+Internal e- conversion flag                         1
+Store e- internal conversion data                   1
+Correlated gamma emission flag                      0
+Max 2J for sampling of angular correlations         10
+=======================================================================
+
+=========================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Initializing workers...
+=========================================================================
+
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={906770732717044781, 629165745432651234, 1235682547346241386, 68420008233404568, 2262190991329242458, 2266470399991071809, 1976726662926872232, 245458862506414172, 1955974201201518530, 2155248512522080758, 604170912935414061, 1116171330120743511, 1861018313684488333, 1296715403254578286, 1549011045957234151, 370819759640195970, 2230139271784837643}; counter= 17sumtot= 1977567618660788324
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 gamma of 59.5 keV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 1.505 keV +- 5.733 eV 
+ -----> Mean dE/dx = 0.001505 MeV/cm	(0.001618 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 0.03513 meV
+ -----> Mean dE/dx = 8.783e-12 MeV/cm	(4.907e-13 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 3.683 keV +- 13.07 eV    secondaries = 794.7 meV +- 101.4 meV
+ Energy balance : edep(1) + eleak = 5.189 keV
+ Total track length (charged) in Absorber 1 per event = 601.2 nm  +- 4.476 nm 
+ Total track length (neutral) in Absorber 1 per event = 1.15 cm  +- 7.072 um 
+ Number of steps (charged) in Absorber 1 per event = 0.2425 +- 0.0008392
+ Number of steps (neutral) in Absorber 1 per event = 1.217 +- 0.0005351
+ Number of secondaries per event : Gammas = 0.2466;   electrons = 9.249;   positrons = 0
+ Number of events with the primary particle transmitted = 0.0001 %
+ Number of events with at least  1 particle transmitted (same charge) = 0.0001 %
+ Number of events with the primary particle reflected = 7.382 %
+ Number of events with at least  1 particle reflected (same charge) = 7.389 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 0 mrad
+   central part defined as +- 0 mrad;    Tail ratio = 0 %
+
+ Global Gamma process counts:
+   Photoeffect 7269
+   Compton     198960
+   Conversion  0
+   Rayleigh    10135
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={740206061941967627, 1884306391405677258, 330713231284635845, 1080774099651995792, 1919814068808776968, 331935852146120807, 1185971006210062794, 267065076926209235, 397585211905703900, 658675074370122825, 1967820597562573007, 2022645202119574350, 2077648627752424497, 2055388576148552805, 113137558183380226, 663459284089174925, 2173582035450891389}; counter= 17sumtot= 1423983882248292642
+---------------------------------------
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={740206061941967627, 1884306391405677258, 330713231284635845, 1080774099651995792, 1919814068808776968, 331935852146120807, 1185971006210062794, 267065076926209235, 397585211905703900, 658675074370122825, 1967820597562573007, 2022645202119574350, 2077648627752424497, 2055388576148552805, 113137558183380226, 663459284089174925, 2173582035450891389}; counter= 17sumtot= 1423983882248292642
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 gamma of 364 keV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 12.04 keV +- 42.59 eV 
+ -----> Mean dE/dx = 0.01204 MeV/cm	(0.01295 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 1.959 meV
+ -----> Mean dE/dx = 4.897e-10 MeV/cm	(2.736e-11 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 7.259 keV +- 34.69 eV    secondaries = 651.6 eV  +- 6.758 eV 
+ Energy balance : edep(1) + eleak = 19.95 keV
+ Total track length (charged) in Absorber 1 per event = 21.42 um  +- 84.1 nm 
+ Total track length (neutral) in Absorber 1 per event = 1.13 cm  +- 6.476 um 
+ Number of steps (charged) in Absorber 1 per event = 0.1601 +- 0.0007657
+ Number of steps (neutral) in Absorber 1 per event = 1.149 +- 0.0004504
+ Number of secondaries per event : Gammas = 1.251;   electrons = 17.11;   positrons = 0
+ Number of events with the primary particle transmitted = 0.0003 %
+ Number of events with at least  1 particle transmitted (same charge) = 0.0004 %
+ Number of events with the primary particle reflected = 4.285 %
+ Number of events with at least  1 particle reflected (same charge) = 5.301 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 0 mrad
+   central part defined as +- 0 mrad;    Tail ratio = 0 %
+
+ Global Gamma process counts:
+   Photoeffect 495
+   Compton     124187
+   Conversion  0
+   Rayleigh    562
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1430515437854095188, 1927232230348828422, 1040972796163690416, 1365029800236923318, 1021995711487542688, 1658171298114813952, 1895413180794802034, 654280399293978533, 1722409590021081045, 784228127966115035, 561068213501240822, 2185536155079297922, 2170159826868089586, 681958335189942, 1046394773947614342, 271840512763419279, 1885700261763667097}; counter= 17sumtot= 869043191617144062
+---------------------------------------
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1430515437854095188, 1927232230348828422, 1040972796163690416, 1365029800236923318, 1021995711487542688, 1658171298114813952, 1895413180794802034, 654280399293978533, 1722409590021081045, 784228127966115035, 561068213501240822, 2185536155079297922, 2170159826868089586, 681958335189942, 1046394773947614342, 271840512763419279, 1885700261763667097}; counter= 17sumtot= 869043191617144062
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 gamma of 605 keV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 19.49 keV +- 75.83 eV 
+ -----> Mean dE/dx = 0.01949 MeV/cm	(0.02096 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 6.13 meV
+ -----> Mean dE/dx = 1.533e-09 MeV/cm	(8.562e-11 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 8.769 keV +- 45.85 eV    secondaries = 424.6 eV  +- 7.783 eV 
+ Energy balance : edep(1) + eleak = 28.69 keV
+ Total track length (charged) in Absorber 1 per event = 52.61 um  +- 223.8 nm 
+ Total track length (neutral) in Absorber 1 per event = 1.109 cm  +- 5.892 um 
+ Number of steps (charged) in Absorber 1 per event = 0.1684 +- 0.000894
+ Number of steps (neutral) in Absorber 1 per event = 1.123 +- 0.0004054
+ Number of secondaries per event : Gammas = 1.318;   electrons = 18.16;   positrons = 0
+ Number of events with the primary particle transmitted = 0.1521 %
+ Number of events with at least  1 particle transmitted (same charge) = 0.1532 %
+ Number of events with the primary particle reflected = 3.789 %
+ Number of events with at least  1 particle reflected (same charge) = 4.273 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 0 mrad
+   central part defined as +- 0 mrad;    Tail ratio = 73.44 %
+
+ Global Gamma process counts:
+   Photoeffect 538
+   Compton     99858
+   Conversion  0
+   Rayleigh    246
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1969344449183174637, 446094689113217840, 261653945747765972, 1824738273064241502, 1100620096103358439, 1375621593641769087, 1265347325252510500, 47949864327958866, 878221508532039791, 802466315497133732, 2085161202083013915, 703827008948767435, 1931124955927698155, 1234284165618864579, 545110829679788336, 158941400959467768, 1757526100440294327}; counter= 17sumtot= 2247132659625207224
+---------------------------------------
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1969344449183174637, 446094689113217840, 261653945747765972, 1824738273064241502, 1100620096103358439, 1375621593641769087, 1265347325252510500, 47949864327958866, 878221508532039791, 802466315497133732, 2085161202083013915, 703827008948767435, 1931124955927698155, 1234284165618864579, 545110829679788336, 158941400959467768, 1757526100440294327}; counter= 17sumtot= 2247132659625207224
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 gamma of 662 keV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 21.15 keV +- 83.64 eV 
+ -----> Mean dE/dx = 0.02115 MeV/cm	(0.02274 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 7.442 meV
+ -----> Mean dE/dx = 1.861e-09 MeV/cm	(1.039e-10 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 9.779 keV +- 52.76 eV    secondaries = 424.3 eV  +- 8.477 eV 
+ Energy balance : edep(1) + eleak = 31.35 keV
+ Total track length (charged) in Absorber 1 per event = 60.62 um  +- 261.2 nm 
+ Total track length (neutral) in Absorber 1 per event = 1.106 cm  +- 5.811 um 
+ Number of steps (charged) in Absorber 1 per event = 0.1763 +- 0.0009469
+ Number of steps (neutral) in Absorber 1 per event = 1.119 +- 0.0004003
+ Number of secondaries per event : Gammas = 1.333;   electrons = 18.35;   positrons = 0
+ Number of events with the primary particle transmitted = 0.3067 %
+ Number of events with at least  1 particle transmitted (same charge) = 0.3093 %
+ Number of events with the primary particle reflected = 3.689 %
+ Number of events with at least  1 particle reflected (same charge) = 4.123 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 0 mrad
+   central part defined as +- 0 mrad;    Tail ratio = 72.25 %
+
+ Global Gamma process counts:
+   Photoeffect 534
+   Compton     96758
+   Conversion  0
+   Rayleigh    220
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={821423089573513090, 1137451679093495275, 103589461436988686, 1890909200188979131, 1953559523420356869, 1547412431196500150, 1049673152026142121, 2227820854571835910, 1053253731290866843, 4014258683565342, 1803768407184828714, 587013807541532208, 325909185118348746, 324214265341196732, 1501804417736416447, 584490582439436782, 842047039291511293}; counter= 17sumtot= 1617454021639656682
+---------------------------------------
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={821423089573513090, 1137451679093495275, 103589461436988686, 1890909200188979131, 1953559523420356869, 1547412431196500150, 1049673152026142121, 2227820854571835910, 1053253731290866843, 4014258683565342, 1803768407184828714, 587013807541532208, 325909185118348746, 324214265341196732, 1501804417736416447, 584490582439436782, 842047039291511293}; counter= 17sumtot= 1617454021639656682
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 gamma of 796 keV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 24.7 keV +- 101.4 eV 
+ -----> Mean dE/dx = 0.0247 MeV/cm	(0.02656 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 10.9 meV
+ -----> Mean dE/dx = 2.724e-09 MeV/cm	(1.522e-10 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 14.37 keV +- 79.29 eV    secondaries = 517.8 eV  +- 11.18 eV 
+ Energy balance : edep(1) + eleak = 39.59 keV
+ Total track length (charged) in Absorber 1 per event = 79.05 um  +- 351 nm 
+ Total track length (neutral) in Absorber 1 per event = 1.101 cm  +- 5.714 um 
+ Number of steps (charged) in Absorber 1 per event = 0.1848 +- 0.0009954
+ Number of steps (neutral) in Absorber 1 per event = 1.112 +- 0.0003896
+ Number of secondaries per event : Gammas = 1.371;   electrons = 18.77;   positrons = 0
+ Number of events with the primary particle transmitted = 0.9202 %
+ Number of events with at least  1 particle transmitted (same charge) = 0.9271 %
+ Number of events with the primary particle reflected = 3.479 %
+ Number of events with at least  1 particle reflected (same charge) = 3.864 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 0 mrad
+   central part defined as +- 0 mrad;    Tail ratio = 70.27 %
+
+ Global Gamma process counts:
+   Photoeffect 633
+   Compton     89521
+   Conversion  0
+   Rayleigh    173
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1923353140448803956, 8232262591967862, 2282223861883787580, 1256882582946408702, 468510965981526748, 1009467640045302749, 1378645101474230790, 1190266964522274101, 562526378551978187, 1875794297579556413, 982248947591698766, 778229365483833424, 262703442986856844, 933152725943489535, 1663863865856279639, 1890540952397412146, 1870921542946272486}; counter= 17sumtot= 1890819965522128320
+---------------------------------------
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1923353140448803956, 8232262591967862, 2282223861883787580, 1256882582946408702, 468510965981526748, 1009467640045302749, 1378645101474230790, 1190266964522274101, 562526378551978187, 1875794297579556413, 982248947591698766, 778229365483833424, 262703442986856844, 933152725943489535, 1663863865856279639, 1890540952397412146, 1870921542946272486}; counter= 17sumtot= 1890819965522128320
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 gamma of 1.6 MeV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 38.61 keV +- 188.7 eV 
+ -----> Mean dE/dx = 0.03861 MeV/cm	(0.04152 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 37.11 meV
+ -----> Mean dE/dx = 9.279e-09 MeV/cm	(5.184e-10 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 110.2 keV +- 364 eV    secondaries = 6.227 keV +- 56.35 eV 
+ Energy balance : edep(1) + eleak = 155.1 keV
+ Total track length (charged) in Absorber 1 per event = 166.4 um  +- 856.4 nm 
+ Total track length (neutral) in Absorber 1 per event = 1.1 cm  +- 5.586 um 
+ Number of steps (charged) in Absorber 1 per event = 0.2158 +- 0.001197
+ Number of steps (neutral) in Absorber 1 per event = 1.097 +- 0.0003702
+ Number of secondaries per event : Gammas = 1.721;   electrons = 21.07;   positrons = 0.0426
+ Number of events with the primary particle transmitted = 8.063 %
+ Number of events with at least  1 particle transmitted (same charge) = 8.204 %
+ Number of events with the primary particle reflected = 2.588 %
+ Number of events with at least  1 particle reflected (same charge) = 3.825 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 0 mrad
+   central part defined as +- 0 mrad;    Tail ratio = 61.68 %
+
+ Global Gamma process counts:
+   Photoeffect 999
+   Compton     64740
+   Conversion  88
+   Rayleigh    125
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1469342033275043736, 2189639815434962451, 925328843187459419, 453891391884712558, 638013324811449708, 1043328282754686474, 1323036250642096310, 148049386674915004, 2224179126058484386, 1203426743083851693, 931993647403556437, 927349394796407810, 1321904876577910365, 1755265664213136288, 1944964354658454005, 1311531413689926241, 1113806066997169181}; counter= 17sumtot= 172463533220976507
+---------------------------------------
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1469342033275043736, 2189639815434962451, 925328843187459419, 453891391884712558, 638013324811449708, 1043328282754686474, 1323036250642096310, 148049386674915004, 2224179126058484386, 1203426743083851693, 931993647403556437, 927349394796407810, 1321904876577910365, 1755265664213136288, 1944964354658454005, 1311531413689926241, 1113806066997169181}; counter= 17sumtot= 172463533220976507
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 e- of 606 keV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 601.5 keV +- 35.51 eV 
+ -----> Mean dE/dx = 0.6015 MeV/cm	(0.6467 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 1.921 MeV/cm	(2.066 MeV*cm2/g)
+    full dEdx       = 1.937 MeV/cm	(2.083 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 363 meV
+ -----> Mean dE/dx = 9.076e-08 MeV/cm	(5.07e-09 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 19.81 MeV/cm	(1.107 MeV*cm2/g)
+    full dEdx       = 20.85 MeV/cm	(1.165 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 3.71 keV +- 33.98 eV    secondaries = 223.2 eV  +- 4.765 eV 
+ Energy balance : edep(1) + eleak = 605.4 keV
+ Total track length (charged) in Absorber 1 per event = 2.325 mm  +- 312.1 nm 
+ Total track length (neutral) in Absorber 1 per event = 226.4 um  +- 2.403 um 
+ Number of steps (charged) in Absorber 1 per event = 5.42 +- 0.0008879
+ Number of steps (neutral) in Absorber 1 per event = 0.03314 +- 0.0002153
+ Number of secondaries per event : Gammas = 0.03274;   electrons = 0.129;   positrons = 0
+ Number of events with the primary particle transmitted = 0 %
+ Number of events with at least  1 particle transmitted (same charge) = 0 %
+ Number of events with the primary particle reflected = 1.437 %
+ Number of events with at least  1 particle reflected (same charge) = 1.438 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 1891 mrad
+   central part defined as +- 5672 mrad;    Tail ratio = 0 %
+
+ Global Gamma process counts:
+   Photoeffect 15257
+   Compton     3702
+   Conversion  0
+   Rayleigh    946
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1217160918215891870, 783736000751794296, 1429970067293490322, 641856503004653649, 2501583131474334, 385921797529545068, 274598650824388127, 793163645718754769, 1576941494208200495, 1478214721807707437, 1007636940318432063, 1941778755589933545, 2246179458997644895, 552602208574540227, 1447823239272792050, 1603762792491835346, 753485667789747841}; counter= 17sumtot= 1996433381024968677
+---------------------------------------
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1217160918215891870, 783736000751794296, 1429970067293490322, 641856503004653649, 2501583131474334, 385921797529545068, 274598650824388127, 793163645718754769, 1576941494208200495, 1478214721807707437, 1007636940318432063, 1941778755589933545, 2246179458997644895, 552602208574540227, 1447823239272792050, 1603762792491835346, 753485667789747841}; counter= 17sumtot= 1996433381024968677
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 e- of 512 keV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 508.1 keV +- 31.23 eV 
+ -----> Mean dE/dx = 0.5081 MeV/cm	(0.5463 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 2 MeV/cm	(2.151 MeV*cm2/g)
+    full dEdx       = 2.005 MeV/cm	(2.156 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 259.1 meV
+ -----> Mean dE/dx = 6.478e-08 MeV/cm	(3.619e-09 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 20.29 MeV/cm	(1.133 MeV*cm2/g)
+    full dEdx       = 21.18 MeV/cm	(1.183 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 3.361 keV +- 30.2 eV    secondaries = 159.8 eV  +- 3.634 eV 
+ Energy balance : edep(1) + eleak = 511.6 keV
+ Total track length (charged) in Absorber 1 per event = 1.839 mm  +- 248.5 nm 
+ Total track length (neutral) in Absorber 1 per event = 177 um  +- 2.153 um 
+ Number of steps (charged) in Absorber 1 per event = 5.581 +- 0.0009197
+ Number of steps (neutral) in Absorber 1 per event = 0.02623 +- 0.0001909
+ Number of secondaries per event : Gammas = 0.0256;   electrons = 0.09686;   positrons = 0
+ Number of events with the primary particle transmitted = 0 %
+ Number of events with at least  1 particle transmitted (same charge) = 0 %
+ Number of events with the primary particle reflected = 1.483 %
+ Number of events with at least  1 particle reflected (same charge) = 1.483 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 2175 mrad
+   central part defined as +- 6525 mrad;    Tail ratio = 0 %
+
+ Global Gamma process counts:
+   Photoeffect 12347
+   Compton     2941
+   Conversion  0
+   Rayleigh    747
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1123495336721631911, 589449811683350211, 1011575476486751931, 1900497248073005033, 1185515303606543955, 784391510908859774, 1111378325051102544, 788687964406771755, 120840264551162764, 1703263926392157635, 634699945157237276, 1975750124013993995, 203855703877554363, 1862947582702374739, 1084162307972289424, 157392386326676246, 264746435960804339}; counter= 17sumtot= 361748589396410238
+---------------------------------------
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1123495336721631911, 589449811683350211, 1011575476486751931, 1900497248073005033, 1185515303606543955, 784391510908859774, 1111378325051102544, 788687964406771755, 120840264551162764, 1703263926392157635, 634699945157237276, 1975750124013993995, 203855703877554363, 1862947582702374739, 1084162307972289424, 157392386326676246, 264746435960804339}; counter= 17sumtot= 361748589396410238
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 e- of 546 keV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 541.8 keV +- 33.25 eV 
+ -----> Mean dE/dx = 0.5418 MeV/cm	(0.5826 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 1.97 MeV/cm	(2.118 MeV*cm2/g)
+    full dEdx       = 1.977 MeV/cm	(2.126 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 294.6 meV
+ -----> Mean dE/dx = 7.366e-08 MeV/cm	(4.115e-09 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 20.09 MeV/cm	(1.122 MeV*cm2/g)
+    full dEdx       = 21.03 MeV/cm	(1.175 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 3.551 keV +- 32.04 eV    secondaries = 185.6 eV  +- 4.203 eV 
+ Energy balance : edep(1) + eleak = 545.5 keV
+ Total track length (charged) in Absorber 1 per event = 2.013 mm  +- 272.2 nm 
+ Total track length (neutral) in Absorber 1 per event = 194.2 um  +- 2.23 um 
+ Number of steps (charged) in Absorber 1 per event = 5.505 +- 0.0009029
+ Number of steps (neutral) in Absorber 1 per event = 0.0287 +- 0.0001979
+ Number of secondaries per event : Gammas = 0.0283;   electrons = 0.1078;   positrons = 0
+ Number of events with the primary particle transmitted = 0 %
+ Number of events with at least  1 particle transmitted (same charge) = 0 %
+ Number of events with the primary particle reflected = 1.474 %
+ Number of events with at least  1 particle reflected (same charge) = 1.474 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 2062 mrad
+   central part defined as +- 6185 mrad;    Tail ratio = 0 %
+
+ Global Gamma process counts:
+   Photoeffect 13497
+   Compton     3017
+   Conversion  0
+   Rayleigh    820
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={2063652031700611604, 2077992933212344569, 2209047455461781653, 1838043404793076781, 568000216711580351, 2108789446616415662, 570453642093580089, 1779646936865893701, 1372921351547800057, 1077181640695454459, 2218127220272520411, 1385842334293256653, 2190116043224769783, 1201251308187013451, 1684854607919651095, 2071137654461920971, 1461398295967721453}; counter= 17sumtot= 208340413461065331
+---------------------------------------
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={2063652031700611604, 2077992933212344569, 2209047455461781653, 1838043404793076781, 568000216711580351, 2108789446616415662, 570453642093580089, 1779646936865893701, 1372921351547800057, 1077181640695454459, 2218127220272520411, 1385842334293256653, 2190116043224769783, 1201251308187013451, 1684854607919651095, 2071137654461920971, 1461398295967721453}; counter= 17sumtot= 208340413461065331
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 e- of 2.28 MeV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 2.236 MeV +- 129.7 eV 
+ -----> Mean dE/dx = 2.236 MeV/cm	(2.404 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 1.655 MeV/cm	(1.779 MeV*cm2/g)
+    full dEdx       = 1.813 MeV/cm	(1.949 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 5.017 eV 
+ -----> Mean dE/dx = 1.254e-06 MeV/cm	(7.006e-08 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 19.87 MeV/cm	(1.11 MeV*cm2/g)
+    full dEdx       = 23.68 MeV/cm	(1.323 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 2.844 keV +- 45.44 eV    secondaries = 1.744 keV +- 22.28 eV 
+ Energy balance : edep(1) + eleak = 2.241 MeV
+ Total track length (charged) in Absorber 1 per event = 1.176 cm  +- 1.044 um 
+ Total track length (neutral) in Absorber 1 per event = 1.266 mm  +- 5.364 um 
+ Number of steps (charged) in Absorber 1 per event = 6.542 +- 0.003093
+ Number of steps (neutral) in Absorber 1 per event = 0.1912 +- 0.0005112
+ Number of secondaries per event : Gammas = 0.2228;   electrons = 1.35;   positrons = 1.8e-05
+ Number of events with the primary particle transmitted = 0 %
+ Number of events with at least  1 particle transmitted (same charge) = 0 %
+ Number of events with the primary particle reflected = 0.474 %
+ Number of events with at least  1 particle reflected (same charge) = 0.5282 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 619 mrad
+   central part defined as +- 1857 mrad;    Tail ratio = 0 %
+
+ Global Gamma process counts:
+   Photoeffect 69151
+   Compton     19513
+   Conversion  0
+   Rayleigh    4043
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1591326705673322069, 1793319462143043589, 1363853880126335784, 387048653524273385, 1880387695635247974, 1679226925771324349, 2072922618464411351, 770185371132485934, 592741496891022056, 1416323349519495696, 2186772415879268604, 752144043292296163, 1951077552721994401, 2143353845842399461, 1059046144007955282, 1424638674041313124, 1911970876944911377}; counter= 17sumtot= 1917909619474161089
+---------------------------------------
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1591326705673322069, 1793319462143043589, 1363853880126335784, 387048653524273385, 1880387695635247974, 1679226925771324349, 2072922618464411351, 770185371132485934, 592741496891022056, 1416323349519495696, 2186772415879268604, 752144043292296163, 1951077552721994401, 2143353845842399461, 1059046144007955282, 1424638674041313124, 1911970876944911377}; counter= 17sumtot= 1917909619474161089
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 alpha of 5.16 MeV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 5.16 MeV +- 1.144 eV 
+ -----> Mean dE/dx = 5.16 MeV/cm	(5.548 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 909.7 MeV/cm	(978.2 MeV*cm2/g)
+    full dEdx       = 909.7 MeV/cm	(978.2 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 26.63 eV 
+ -----> Mean dE/dx = 6.656e-06 MeV/cm	(3.719e-07 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 4356 MeV/cm	(243.3 MeV*cm2/g)
+    full dEdx       = 4356 MeV/cm	(243.3 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 0 eV  +- 0 eV    secondaries = 1.113 eV  +- 1.06 eV 
+ Energy balance : edep(1) + eleak = 5.16 MeV
+ Total track length (charged) in Absorber 1 per event = 36.2 um  +- 4.382 Ang
+ Total track length (neutral) in Absorber 1 per event = 70.33 nm  +- 56.91 nm 
+ Number of steps (charged) in Absorber 1 per event = 1.001 +- 4.552e-05
+ Number of steps (neutral) in Absorber 1 per event = 3e-06 +- 1.732e-06
+ Number of secondaries per event : Gammas = 5e-06;   electrons = 2.6e-05;   positrons = 0
+ Number of events with the primary particle transmitted = 0 %
+ Number of events with at least  1 particle transmitted (same charge) = 0 %
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge) = 0.0001 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 323.8 mrad
+   central part defined as +- 971.5 mrad;    Tail ratio = 0 %
+
+ Global Gamma process counts:
+   Photoeffect 0
+   Compton     0
+   Conversion  0
+   Rayleigh    0
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1906295443365765609, 2059263148104639916, 543342702182164999, 1824166769954427955, 142103961224151732, 450311625125307921, 147220631774140658, 812744844261280390, 1567987471314789062, 1808783365119160655, 2286624044199862868, 1371498277441394091, 490562497844722294, 1814112992326174632, 200684467326455246, 2293106765127271722, 1225174811691220847}; counter= 17sumtot= 191396735459685038
+---------------------------------------
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1906295443365765609, 2059263148104639916, 543342702182164999, 1824166769954427955, 142103961224151732, 450311625125307921, 147220631774140658, 812744844261280390, 1567987471314789062, 1808783365119160655, 2286624044199862868, 1371498277441394091, 490562497844722294, 1814112992326174632, 200684467326455246, 2293106765127271722, 1225174811691220847}; counter= 17sumtot= 191396735459685038
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 alpha of 5.49 MeV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 5.49 MeV +- 1.91 eV 
+ -----> Mean dE/dx = 5.49 MeV/cm	(5.903 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 868.8 MeV/cm	(934.2 MeV*cm2/g)
+    full dEdx       = 868.9 MeV/cm	(934.3 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 30.14 eV 
+ -----> Mean dE/dx = 7.535e-06 MeV/cm	(4.21e-07 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 4236 MeV/cm	(236.7 MeV*cm2/g)
+    full dEdx       = 4236 MeV/cm	(236.7 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 0 eV  +- 0 eV    secondaries = 3.092 eV  +- 1.905 eV 
+ Energy balance : edep(1) + eleak = 5.49 MeV
+ Total track length (charged) in Absorber 1 per event = 39.92 um  +- 5.733 Ang
+ Total track length (neutral) in Absorber 1 per event = 42.75 nm  +- 33.23 nm 
+ Number of steps (charged) in Absorber 1 per event = 1.001 +- 4.807e-05
+ Number of steps (neutral) in Absorber 1 per event = 5e-06 +- 3e-06
+ Number of secondaries per event : Gammas = 3e-06;   electrons = 8e-06;   positrons = 0
+ Number of events with the primary particle transmitted = 0 %
+ Number of events with at least  1 particle transmitted (same charge) = 0 %
+ Number of events with the primary particle reflected = 0 %
+ Number of events with at least  1 particle reflected (same charge) = 0.0003 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 304.4 mrad
+   central part defined as +- 913.2 mrad;    Tail ratio = 0 %
+
+ Global Gamma process counts:
+   Photoeffect 0
+   Compton     2
+   Conversion  0
+   Rayleigh    0
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1614905029198147369, 1365569761634736920, 2166253493335836002, 621322338724187227, 744232465905252595, 1354974296698797579, 418363414765655585, 1255127668391284399, 25118612392503775, 1975945454886112, 194392849543537012, 1928931273844578097, 757876586029729043, 759228568852913785, 1035740551302425812, 1297447678246012, 1542435872524957972}; counter= 17sumtot= 1952688120995511590
+---------------------------------------
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1614905029198147369, 1365569761634736920, 2166253493335836002, 621322338724187227, 744232465905252595, 1354974296698797579, 418363414765655585, 1255127668391284399, 25118612392503775, 1975945454886112, 194392849543537012, 1928931273844578097, 757876586029729043, 759228568852913785, 1035740551302425812, 1297447678246012, 1542435872524957972}; counter= 17sumtot= 1952688120995511590
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 neutron of 25 meV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 46.1 keV +- 255.5 eV 
+ -----> Mean dE/dx = 0.0461 MeV/cm	(0.04957 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 67.42 meV
+ -----> Mean dE/dx = 1.685e-08 MeV/cm	(9.416e-10 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 16.05 meV +- 0.02856 meV   secondaries = 1.046 MeV +- 1.137 keV
+ Energy balance : edep(1) + eleak = 1.092 MeV
+ Total track length (charged) in Absorber 1 per event = 206.4 um  +- 1.283 um 
+ Total track length (neutral) in Absorber 1 per event = 3.389 cm  +- 28.54 um 
+ Number of steps (charged) in Absorber 1 per event = 4.028 +- 0.00405
+ Number of steps (neutral) in Absorber 1 per event = 5.304 +- 0.003632
+ Number of secondaries per event : Gammas = 6.509;   electrons = 48.83;   positrons = 0.1778
+ Number of events with the primary particle transmitted = 0.2592 %
+ Number of events with at least  1 particle transmitted (same charge) = 12.96 %
+ Number of events with the primary particle reflected = 39.08 %
+ Number of events with at least  1 particle reflected (same charge) = 79.92 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 0 mrad
+   central part defined as +- 0 mrad;    Tail ratio = 82.25 %
+
+ Global Gamma process counts:
+   Photoeffect 1477
+   Compton     81456
+   Conversion  340
+   Rayleigh    314
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1459321594288190296, 1043839063186806149, 1098121633347811976, 759025618848351501, 2095924412883893318, 872482580438342654, 304756262427391122, 1947226553180475019, 1825111382669550864, 1501179780926570512, 435362689187183157, 2168834039155362560, 654781759672502093, 978199665547056450, 421664707983313404, 774365651785045474, 682265252409535994}; counter= 17sumtot= 575718574227830935
+---------------------------------------
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={1459321594288190296, 1043839063186806149, 1098121633347811976, 759025618848351501, 2095924412883893318, 872482580438342654, 304756262427391122, 1947226553180475019, 1825111382669550864, 1501179780926570512, 435362689187183157, 2168834039155362560, 654781759672502093, 978199665547056450, 421664707983313404, 774365651785045474, 682265252409535994}; counter= 17sumtot= 575718574227830935
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 neutron of 100 keV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 71.27 keV +- 122.7 eV 
+ -----> Mean dE/dx = 0.07127 MeV/cm	(0.07663 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 20.13 meV
+ -----> Mean dE/dx = 5.032e-09 MeV/cm	(2.811e-10 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 25.16 keV +- 36.81 eV    secondaries = 238.5 keV +- 727.1 eV 
+ Energy balance : edep(1) + eleak = 334.9 keV
+ Total track length (charged) in Absorber 1 per event = 40.92 um  +- 574.7 nm 
+ Total track length (neutral) in Absorber 1 per event = 2.749 cm  +- 21.88 um 
+ Number of steps (charged) in Absorber 1 per event = 4.917 +- 0.004779
+ Number of steps (neutral) in Absorber 1 per event = 5.522 +- 0.00439
+ Number of secondaries per event : Gammas = 1.761;   electrons = 13.13;   positrons = 0.05569
+ Number of events with the primary particle transmitted = 23.16 %
+ Number of events with at least  1 particle transmitted (same charge) = 27.15 %
+ Number of events with the primary particle reflected = 46.69 %
+ Number of events with at least  1 particle reflected (same charge) = 55.28 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 0 mrad
+   central part defined as +- 0 mrad;    Tail ratio = 87.22 %
+
+ Global Gamma process counts:
+   Photoeffect 316
+   Compton     14987
+   Conversion  65
+   Rayleigh    69
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={875558605653364019, 237304518235533786, 1481611818915133935, 579462943193009251, 310189726715114181, 2040567199316153064, 255796006363522237, 1279960931030835779, 1662357797121382690, 2114651985320869177, 2205060892261568488, 1829955678163222608, 1102926531084448079, 1233241860431315554, 591179050469074118, 340684480491404832, 542399087572464412}; counter= 17sumtot= 236165038628864602
+---------------------------------------
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={875558605653364019, 237304518235533786, 1481611818915133935, 579462943193009251, 310189726715114181, 2040567199316153064, 255796006363522237, 1279960931030835779, 1662357797121382690, 2114651985320869177, 2205060892261568488, 1829955678163222608, 1102926531084448079, 1233241860431315554, 591179050469074118, 340684480491404832, 542399087572464412}; counter= 17sumtot= 236165038628864602
+---------------------------------------
+
+==============================================================================================
+--> G4TaskRunManager::CreateAndStartWorkers() --> Creating 1000 tasks with 1000 events/task...
+==============================================================================================
+
+
+ ======================== RUN SUMMARY ======================
+
+ The run was 1000000 neutron of 2 MeV entering the multi-layer shield.
+
+ ------------------ LAYER 1: ABSORBER 1 ------------------
+ Material: Paraffin (density: 930 mg/cm3) Thickness: 1 cm 
+ Total energy deposit in Absorber 1 per event = 331.6 keV +- 602 eV 
+ -----> Mean dE/dx = 0.3316 MeV/cm	(0.3566 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ LAYER 2: ABSORBER 2 ------------------
+ Material: WNICU95 (density: 17.9 g/cm3 ) Thickness: 4 cm 
+ Total energy deposit in Absorber 2 per event = 472.3 meV
+ -----> Mean dE/dx = 1.181e-07 MeV/cm	(6.597e-09 MeV*cm2/g)
+ From formulas :
+    restricted dEdx = 0 MeV/cm	(0 MeV*cm2/g)
+    full dEdx       = 0 MeV/cm	(0 MeV*cm2/g)
+
+ ------------------ GLOBAL KINETICS ------------------
+ Leakage :  primary = 773.4 keV +- 935.4 eV    secondaries = 312.4 keV +- 577.8 eV 
+ Energy balance : edep(1) + eleak = 1.417 MeV
+ Total track length (charged) in Absorber 1 per event = 17.4 um  +- 251 nm 
+ Total track length (neutral) in Absorber 1 per event = 1.78 cm  +- 15 um 
+ Number of steps (charged) in Absorber 1 per event = 1.419 +- 0.002917
+ Number of steps (neutral) in Absorber 1 per event = 2.306 +- 0.002502
+ Number of secondaries per event : Gammas = 2.508;   electrons = 19.34;   positrons = 0.0132
+ Number of events with the primary particle transmitted = 36.94 %
+ Number of events with at least  1 particle transmitted (same charge) = 56.19 %
+ Number of events with the primary particle reflected = 9.943 %
+ Number of events with at least  1 particle reflected (same charge) = 28.09 %
+
+ MultipleScattering (Layer 1 Analysis):
+   rms proj angle of transmit primary particle = 0 mrad (central part only)
+   computed theta0 (Highland formula)          = 0 mrad
+   central part defined as +- 0 mrad;    Tail ratio = 59.36 %
+
+ Global Gamma process counts:
+   Photoeffect 86
+   Compton     7422
+   Conversion  13
+   Rayleigh    31
+
+------- MixMaxRng engine status -------
+ Current state vector is:
+mixmax state, file version 1.0
+N=17; V[N]={2041921360295031289, 1518524571034477689, 998257932660425974, 1247170662665683299, 1766576968945129071, 1953211044767650437, 2030393336105309022, 1465503573790055148, 2254853963940890851, 694507828112527470, 386851783276666117, 133478305306392706, 2119249830473905594, 1445798409989183712, 496254612802208423, 1105725540959155517, 178187450012306860}; counter= 17sumtot= 1083880092213753620
+---------------------------------------

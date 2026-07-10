@@ -1,0 +1,45 @@
+# ==============================================================================
+#  requirements.txt — Karar katmani (NVIDIA Jetson Orin Nano)
+# ==============================================================================
+#  Surum numaralari, Final Degerlendirme Raporu'nun Tablo 8.4'unden alinmistir.
+#  Kaynak: calisan Jetson uzerinde tespit edilen surumler.
+#
+#  Kurulum:
+#      pip3 install -r requirements.txt
+#
+#  NOT: pyrealsense2 ve torch, JetPack ile birlikte gelmis olabilir.
+#       Yeniden kurmadan once mevcut surumu dogrulayin:
+#           python3 -c "import torch, pyrealsense2; print(torch.__version__)"
+# ==============================================================================
+
+# ---- Arayuz ----
+PyQt5==5.15.6                 # gosterge paneli (jetson_gas_dock.py)
+PyQtWebEngine                 # gomulu tarayici — yer kontrol istasyonu (rover_gcs.py)
+
+# ---- Goruntu isleme ----
+opencv-python==4.8.0          # kamera akisi, JPEG kodlama, MJPEG yayini
+numpy==1.26.4                 # sayisal dizi islemleri
+
+# ---- Derinlik kamerasi ----
+pyrealsense2==2.58.2.10647    # RealSense D415 surucusu ve akis hizalama
+
+# ---- Nesne tespiti (istege bagli) ----
+ultralytics==8.4.88           # YOLO
+torch==2.12.1                 # Ultralytics bagimliligi
+torchvision==0.27.1
+
+# ---- Seri haberlesme ----
+pyserial==3.5                 # Jetson <-> ESP32 telemetri ve komut hatti
+
+# ---- Uzak istasyon istemcisi (remote_control.py) ----
+# Bu paket uzak istasyon BILGISAYARINDA gereklidir, Jetson'da degil.
+pygame
+
+# ==============================================================================
+#  Calisma ortami (raporda Tablo 8.4)
+# ==============================================================================
+#  Python        : 3.10.12
+#  Arduino IDE   : 2.2.1   (arduino-cli 0.34.0)
+#  Geant4        : geant4-11-03-patch-02  [MT]
+#  Fizik listesi : QGSP_BERT_HP
+# ==============================================================================
