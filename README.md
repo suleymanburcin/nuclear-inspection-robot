@@ -23,7 +23,7 @@ Bu çalışma görevi **iki uzmanlaşmış platforma** ayırır:
 
 | Platform | Tahrik | Görev |
 |---|---|---|
-| **Benzinli taşıyıcı** | 8 BG içten yanmalı, Ackermann direksiyon | Dış saha, menzil, yük |
+| **Benzinli taşıyıcı** | 7 BG içten yanmalı, Ackermann direksiyon | Dış saha, menzil, yük |
 | **Elektrikli yavru robot** | Deneyap Kart 1A, kayma-yönlendirmeli | Kapalı hacim, emisyonsuz |
 
 Literatürdeki hibritler ağırlıklı olarak *hareket-modu* hibritleridir (tekerlek–palet,
