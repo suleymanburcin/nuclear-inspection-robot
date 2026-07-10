@@ -209,8 +209,6 @@ Toplam donanım maliyeti yaklaşık **129.045 ₺**. Ticari nükleer denetim rob
 maliyetinin çok altındadır; sistem tamamen ticari raf ürünü bileşenler ve açık kaynaklı
 bir araç zinciri üzerine kuruludur. **Tescilli yazılım bağımlılığı yoktur.**
 
-Sistemi robot hâline getiren unsur donanım değil, yaklaşık **3.161 satırlık** özgün gömülü
-ve arayüz yazılımıdır.
 
 ---
 
