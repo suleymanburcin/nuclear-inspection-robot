@@ -6,7 +6,7 @@ uygundur.
 | Klasör / dosya | İçerik | Durum |
 |---|---|---|
 | `geant4/utku.mac` | Zırhlama analizi girdi makrosu (Ek-A ile aynı) | ✅ |
-| `geant4/output/*.txt` | Beş zırh yapılandırmasının tam koşu çıktıları | ⚠ 4/5 mevcut — cam (Pb+boro) çıktısı eksik |
+| `geant4/output/*.txt` | Beş zırh yapılandırmasının tam koşu çıktıları | ✅ |
 | `geant4/src/DetectorConstruction.cc` | Zırh malzemeleri ve geometri tanımı | ✅ |
 | `firmware/leonardo_gas_sender/` | Algılama katmanı gömülü yazılımı | ✅ |
 | `firmware/esp32_1_bridge/` | Köprüleme katmanı gömülü yazılımı | ✅ |
@@ -39,8 +39,7 @@ Bu üç dosya raporun Ek-C bölümünde kaynak kod olarak yer almaktadır.
 | Fizik listesi | `QGSP_BERT_HP` |
 | Birincil parçacık | 10⁶ / parçacık türü |
 
-Bu iki değer, raporun Bölüm 4.1.4 ve 8.6 bölümlerinde `[BEKLEYEN VERİ]` olarak
-işaretlenmiş alanları doldurur.
+
 
 ---
 
@@ -52,8 +51,4 @@ işaretlenmiş alanları doldurur.
 
 ---
 
-## Not — `media/` klasörü
 
-Ek-D'nin özgün listesinde yer alan `media/` (video kayıtları) klasörü, takımın kararıyla
-bu arşive **dâhil edilmemiştir.** Raporun Ek-D bölümündeki içerik listesinden de
-çıkarılmalıdır; aksi hâlde arşivde bulunmayan bir klasöre atıf yapılmış olur.
