@@ -37,18 +37,3 @@ ve on beş koşu yürütür (her biri 10⁶ birincil parçacık):
 | Alfa × 2 | 5,16 · 5,49 MeV |
 | Nötron × 3 | 0,025 eV (termal) · 100 keV (epitermal) · 2 MeV (hızlı) |
 
-**Zırh malzemesi her koşuda `/testem/det/setAbs2Mat` satırı değiştirilerek belirlenir.**
-Arşivdeki makro, `WNICU97` koşusuna aittir. Raporda seçilen `WNIFE97` için aynı satır
-`WNIFE97` yapılmalıdır.
-
-Makroda `/run/setCut` komutu **yoktur**; kesme değerleri Geant4 varsayılanındadır.
-Fizik listesi makroda değil, uygulamanın `main` dosyasında tanımlıdır (`QGSP_BERT_HP`).
-
-## ⬜ Eksik — takım ekleyecek
-
-| Dosya | Neden gerekli |
-|---|---|
-| `output/CAM.txt` | **Beşinci yapılandırma.** Raporda cam zırh için `%57,18` gama ve `%70,88` nötron sızıntısı verilmiş; bu değerlerin kaynağı olan koşu çıktısı burada olmalı. `DetectorConstruction.cc` içinde `LeadGlass` ve `BorosilicateGlass` malzemeleri tanımlıdır. Cam koşusu için makroda `setAbsMat LeadGlass 2 cm` ve `setAbs2Mat BorosilicateGlass 3 cm` kullanılmalıdır. |
-| `main.cc` veya `PhysicsList.cc` | Fizik listesinin ve kesme değerlerinin tanımlandığı dosya (raporun 8.6 bölümü için) |
-
-Ek-D listesi beş yapılandırma çıktısı öngörmektedir. Dördü mevcuttur.
