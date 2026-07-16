@@ -14,18 +14,4 @@ Tüm dosyalar ikili (binary) STL biçimindedir ve bütünlük denetiminden geçm
 | `fpv_tutucu.stl` | 1718 | FPV kamera ve ölçüm cihazı tutucusu (122 × 100 × 190 mm) |
 | `kol_taban_braketi.stl` | 26864 | Kol taban adım motoru braketi (75 × 65 × 94 mm) |
 
-## ⚠ Dosya adı teyidi gerekiyor
-
-Son iki dosya, kaynak adlarından değil **ölçülerinden** yola çıkılarak adlandırılmıştır:
-
-| Özgün ad | Verilen ad | Ölçü | Dayanak |
-|---|---|---|---|
-| `Magnificent_Amberis__7_.stl` | `fpv_tutucu.stl` | 122 × 100 × 190 mm | Uzun kollu dikey yapı; Şekil 4.9(a) |
-| `Assembly.stl` | `kol_taban_braketi.stl` | 75 × 65 × 94 mm | Kompakt montaj parçası; Şekil 4.11 |
-
-Bu eşleştirme **takım tarafından doğrulanmalıdır.** Yanlışsa dosya adları düzeltilmelidir.
-
-## Öneri
-
-Kaynak dosyalar (`.step` veya `.f3d`) da eklenirse parçalar yeniden düzenlenebilir olur.
-STL yalnızca baskıya hazır üçgen ağdır; parametrik düzenlemeye uygun değildir.
+.
